@@ -1,0 +1,264 @@
+<header class="styleguideContentsHeader">
+  <h2 class="styleguideContentsHeaderText">Table / List</h2>
+  <div class="styleguideContentsHeaderActions">
+    <button type="button" class="styleguideBtnCodingList">
+      <svg class="svg-icon" aria-hidden="true">
+        <use href="#icon-styleguide-more"></use>
+      </svg>
+      <span class="styleguideBtnCodingListText">Coding_list</span>
+      <svg class="svg-icon" aria-hidden="true">
+        <use href="#icon-styleguide-arrow-right"></use>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<div class="styleguideContentsBody">
+  <section class="styleguideContentsSection">
+    <h3 class="styleguideContentsLabel">table</h3>
+
+    <div class="styleguideResultBody">
+      <div class="styleguideResultFrame">
+        <div class="table">
+          <table>
+            <caption>
+              스타일가이드 테이블 입니다.
+            </caption>
+            <colgroup>
+              <col style="width: 200px" />
+              <col style="width: 50%" />
+              <col style="width: 50%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+                <th scope="col">제목</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+              </tr>
+              <tr>
+                <td>내용</td>
+                <td>내용</td>
+                <td>내용</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="codeArea">
+        <div class="codeName">
+          <svg class="svg-icon" aria-hidden="true">
+            <use href="#icon-styleguide-code"></use>
+          </svg>
+          <h4>Html</h4>
+        </div>
+        <pre class="hljs-sc">
+          <code class="hljs language-html">&lt;div class="table"&gt;
+  &lt;table&gt;
+    &lt;caption&gt;스타일가이드 테이블 입니다.&lt;/caption&gt;
+    &lt;colgroup&gt;
+      &lt;col style="width: 200px;"&gt;
+      &lt;col style="width: 50%;"&gt;
+      &lt;col style="width: 50%;"&gt;
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;제목&lt;/th&gt;
+        &lt;th scope="col"&gt;제목&lt;/th&gt;
+        &lt;th scope="col"&gt;제목&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;내용&lt;/td&gt;
+        &lt;td&gt;내용&lt;/td&gt;
+        &lt;td&gt;내용&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;내용&lt;/td&gt;
+        &lt;td&gt;내용&lt;/td&gt;
+        &lt;td&gt;내용&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+&lt;!-- table --&gt;
+        </code>
+      </pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="styleguideContentsSection">
+    <h3 class="styleguideContentsLabel">테이블 (hover)</h3>
+
+    <div class="styleguideResultBody">
+      <div class="styleguideResultFrame">
+        <div class="table hover">
+          <table>
+            <caption class="sr-only">
+              테이블 hover 스타일 예시
+            </caption>
+            <colgroup>
+              <col style="width: 20%" />
+              <col style="width: 30%" />
+              <col style="width: 30%" />
+              <col style="width: 20%" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col">컬럼1</th>
+                <th scope="col">컬럼2</th>
+                <th scope="col">컬럼3</th>
+                <th scope="col">관리</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>데이터1</td>
+                <td>데이터2</td>
+                <td>데이터3</td>
+                <td>
+                  <button type="button" class="btn small outline tertiary">
+                    <span>편집</span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>데이터1</td>
+                <td>데이터2</td>
+                <td>데이터3</td>
+                <td>
+                  <button type="button" class="btn small outline tertiary">
+                    <span>편집</span>
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td>데이터1</td>
+                <td>데이터2</td>
+                <td>데이터3</td>
+                <td>
+                  <button type="button" class="btn small outline tertiary">
+                    <span>편집</span>
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="codeArea">
+        <div class="codeName">
+          <svg class="svg-icon" aria-hidden="true">
+            <use href="#icon-styleguide-code"></use>
+          </svg>
+          <h4>Html</h4>
+        </div>
+        <pre class="hljs-sc">
+                    <code class="hljs language-html">&lt;div class="table hover"&gt;
+  &lt;table&gt;
+    &lt;caption class="sr-only"&gt;테이블 설명&lt;/caption&gt;
+    &lt;colgroup&gt;
+      &lt;col style="width: 20%;"&gt;
+      &lt;col style="width: 30%;"&gt;
+      ...
+    &lt;/colgroup&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;컬럼1&lt;/th&gt;
+        &lt;th scope="col"&gt;컬럼2&lt;/th&gt;
+        ...
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;데이터1&lt;/td&gt;
+        &lt;td&gt;데이터2&lt;/td&gt;
+        ...
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code>
+                </pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="styleguideContentsSection">
+    <h3 class="styleguideContentsLabel">테이블 (row)</h3>
+
+    <div class="styleguideResultBody">
+      <div class="styleguideResultFrame">
+        <div class="table row">
+          <table>
+            <caption>
+              설비상세 테이블입니다
+            </caption>
+            <colgroup>
+              <col style="width: 100px" />
+              <col style="width: 100%" />
+            </colgroup>
+            <tbody>
+              <tr>
+                <th scope="col">설비유형</th>
+                <td>PCS</td>
+              </tr>
+              <tr>
+                <th scope="col">사이트명</th>
+                <td>사이트1</td>
+              </tr>
+              <tr>
+                <th scope="col">설비명</th>
+                <td>PCS#1</td>
+              </tr>
+              <tr>
+                <th scope="col">제조사</th>
+                <td>홍길동 주식회사</td>
+              </tr>
+              <tr>
+                <th scope="col">제조년월</th>
+                <td>2024년 2월</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="codeArea">
+        <div class="codeName">
+          <svg class="svg-icon" aria-hidden="true">
+            <use href="#icon-styleguide-code"></use>
+          </svg>
+          <h4>Html</h4>
+        </div>
+        <pre class="hljs-sc">
+                    <code class="hljs language-html">&lt;div class="table row"&gt;
+  &lt;table&gt;
+    &lt;caption&gt;설비상세 테이블입니다&lt;/caption&gt;
+    &lt;colgroup&gt;
+      &lt;col style="width: 100px;"&gt;
+      &lt;col style="width: 100%;"&gt;
+    &lt;/colgroup&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;th scope="col"&gt;설비유형&lt;/th&gt;
+        &lt;td&gt;PCS&lt;/td&gt;
+      &lt;/tr&gt;
+      ...
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code>
+                </pre>
+      </div>
+    </div>
+  </section>
+</div>

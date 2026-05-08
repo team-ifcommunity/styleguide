@@ -1,0 +1,32 @@
+{
+    "type": "module",
+    "name": "pre-build",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "set NODE_OPTIONS=--no-warnings && gulp",
+        "build": "set NODE_ENV=production&& set NODE_OPTIONS=--no-warnings&& gulp build",
+        "watch": "set NODE_OPTIONS=--no-warnings && gulp watchFiles",
+        "serve": "set NODE_OPTIONS=--no-warnings && gulp brwSync"
+    },
+    "author": "",
+    "license": "ISC",
+    "browserslist": [
+        "last 2 versions"
+    ],
+    "devDependencies": {
+        "browser-sync": "^2.29.3",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^9.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-cached": "^1.1.1",
+        "gulp-concat": "^2.6.1",
+        "gulp-file-include": "^2.3.0",
+        "gulp-html-extend": "^1.1.6",
+        "gulp-rename": "^1.4.0",
+        "gulp-sass": "^6.0.1",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-uglify": "^3.0.2",
+        "sass": "^1.88.0"
+    }
+}

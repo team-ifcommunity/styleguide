@@ -1,0 +1,282 @@
+<header class="styleguideContentsHeader">
+    <h2 class="styleguideContentsHeaderText">Basic System</h2>
+    <div class="styleguideContentsHeaderActions">
+        <button type="button" class="styleguideBtnCodingList">
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="#icon-styleguide-more"></use>
+            </svg>
+            <span class="styleguideBtnCodingListText">Coding_list</span>
+            <svg class="svg-icon" aria-hidden="true">
+              <use href="#icon-styleguide-arrow-right"></use>
+            </svg>
+        </button>
+    </div>
+</header>
+
+<div class="styleguideContentsBody">
+    <section class="styleguideContentsSection">
+        <h3 class="styleguideContentsLabel">font</h3>
+
+        <div class="styleguideFontSystem">
+            <div class="styleguideFontSystemGroup">
+                <h4 class="styleguideFontSystemTitle">Font Family</h4>
+                <p class="styleguideFontSystemDesc">프로젝트 기본 폰트는 Pretendard를 사용하며, Regular, Medium, SemiBold, Bold 네 가지 두께를 지원한다.</p>
+                <div class="styleguideFontPreview">
+                    <p class="styleguideFont styleguideFont-rg">Pretendard 프리텐다드 1234567890_Regular</p>
+                    <p class="styleguideFont styleguideFont-md">Pretendard 프리텐다드 1234567890_Medium</p>
+                    <p class="styleguideFont styleguideFont-sb">Pretendard 프리텐다드 1234567890_SemiBold</p>
+                    <p class="styleguideFont styleguideFont-bd">Pretendard 프리텐다드 1234567890_Bold</p>
+                </div>
+                <div class="styleguideTable styleguideTable--dark">
+                    <table>
+                        <colgroup>
+                            <col style="width: 30%">
+                            <col style="width: 25%">
+                            <col style="width: 45%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Style</th>
+                                <th scope="col">Font weight</th>
+                                <th scope="col">용도</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Regular</td><td>400</td><td>본문, 일반 텍스트</td></tr>
+                            <tr><td>Medium</td><td>500</td><td>강조 텍스트</td></tr>
+                            <tr><td>SemiBold</td><td>600</td><td>서브 타이틀, 라벨</td></tr>
+                            <tr><td>Bold</td><td>700</td><td>타이틀, 강한 강조</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="styleguideContentsSection">
+        <h3 class="styleguideContentsLabel">typography</h3>
+
+        <div class="styleguideFontSystem">
+            <!-- Display -->
+            <div class="styleguideFontSystemGroup">
+                <h4 class="styleguideFontSystemTitle">Display</h4>
+                <p class="styleguideFontSystemDesc">디스플레이(Display)는 화면에서 가장 큰 텍스트로 주로 배너와 같은 마케팅 용도로 사용하며, 자유롭게 변형할 수 있으나 과도한 크기 사용은 지양한다.</p>
+                <div class="styleguideFontSystemPreview">
+                    <p class="styleguideDisplayText styleguideDisplay-large">Display-large</p>
+                    <p class="styleguideDisplayText styleguideDisplay-medium">Display-medium</p>
+                    <p class="styleguideDisplayText styleguideDisplay-small">Display-small</p>
+                </div>
+                <div class="styleguideTable styleguideTable--dark">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Style</th>
+                                <th scope="col">Size(pc)</th>
+                                <th scope="col">Font weight</th>
+                                <th scope="col">Line height</th>
+                                <th scope="col">Letter spacing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>large</td>
+                                <td>40</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>1px</td>
+                            </tr>
+                            <tr>
+                                <td>medium</td>
+                                <td>32</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>0px</td>
+                            </tr>
+                            <tr>
+                                <td>small</td>
+                                <td>28</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>0px</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Heading -->
+            <div class="styleguideFontSystemGroup">
+                <h4 class="styleguideFontSystemTitle">Heading</h4>
+                <p class="styleguideFontSystemDesc">헤딩(Heading)은 페이지 단위의 타이틀과 모듈 단위의 역할을 강조하는 데 사용하며, h2부터 h6까지 계층을 설정한다.</p>
+                <div class="styleguideFontSystemPreview">
+                    <p class="styleguideHeadingDisplay styleguideHeading-xlarge">heading-xlarge</p>
+                    <p class="styleguideHeadingDisplay styleguideHeading-large">heading-large</p>
+                    <p class="styleguideHeadingDisplay styleguideHeading-medium">heading-medium</p>
+                    <p class="styleguideHeadingDisplay styleguideHeading-small">heading-small</p>
+                    <p class="styleguideHeadingDisplay styleguideHeading-xsmall">heading-xsmall</p>
+                </div>
+                <div class="styleguideTable styleguideTable--dark">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Style</th>
+                                <th scope="col">Size(pc)</th>
+                                <th scope="col">Font weight</th>
+                                <th scope="col">Line height</th>
+                                <th scope="col">Letter spacing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>xlarge</td>
+                                <td>24</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>1px</td>
+                            </tr>
+                            <tr>
+                                <td>large</td>
+                                <td>20</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>1px</td>
+                            </tr>
+                            <tr>
+                                <td>medium</td>
+                                <td>16</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>0px</td>
+                            </tr>
+                            <tr>
+                                <td>small</td>
+                                <td>14</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>0px</td>
+                            </tr>
+                            <tr>
+                                <td>xsmall</td>
+                                <td>13</td>
+                                <td>700</td>
+                                <td>150%</td>
+                                <td>0px</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Body -->
+            <div class="styleguideFontSystemGroup">
+                <h4 class="styleguideFontSystemTitle">Body</h4>
+                <p class="styleguideFontSystemDesc">본문과 기본 콘텐츠에 적용된다.</p>
+                <div class="styleguideBodyPreview">
+                    <div class="styleguideBodyPreviewCol">
+                        <p class="styleguideBodyDisplay styleguideBody-xlarge">body-xlarge</p>
+                        <p class="styleguideBodyDisplay styleguideBody-large">body-large</p>
+                        <p class="styleguideBodyDisplay styleguideBody-medium">body-medium</p>
+                        <p class="styleguideBodyDisplay styleguideBody-small">body-small</p>
+                    </div>
+                    <div class="styleguideBodyPreviewCol">
+                        <p class="styleguideBodyDisplay styleguideBody-xlarge-MD">body-xlarge-MD</p>
+                        <p class="styleguideBodyDisplay styleguideBody-large-MD">body-large-MD</p>
+                        <p class="styleguideBodyDisplay styleguideBody-medium-MD">body-medium-MD</p>
+                        <p class="styleguideBodyDisplay styleguideBody-small-MD">body-small-MD</p>
+                    </div>
+                    <div class="styleguideBodyPreviewCol">
+                        <p class="styleguideBodyDisplay styleguideBody-xlarge-B">body-xlarge-B</p>
+                        <p class="styleguideBodyDisplay styleguideBody-large-B">body-large-B</p>
+                        <p class="styleguideBodyDisplay styleguideBody-medium-B">body-medium-B</p>
+                        <p class="styleguideBodyDisplay styleguideBody-small-B">body-small-B</p>
+                    </div>
+                </div>
+                <div class="styleguideTable styleguideTable--dark">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Style</th>
+                                <th scope="col">Size(pc)</th>
+                                <th scope="col">Font weight</th>
+                                <th scope="col">Line height</th>
+                                <th scope="col">Letter spacing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>xlarge-B</td><td>16</td><td>700</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>large-B</td><td>14</td><td>700</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>medium-B</td><td>13</td><td>700</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>small-B</td><td>12</td><td>700</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>xlarge-MD</td><td>16</td><td>500</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>large-MD</td><td>14</td><td>500</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>medium-MD</td><td>13</td><td>500</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>small-MD</td><td>12</td><td>500</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>xlarge</td><td>16</td><td>400</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>large</td><td>14</td><td>400</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>medium*</td><td>13</td><td>400</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>small</td><td>12</td><td>400</td><td>150%</td><td>0px</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Label -->
+            <div class="styleguideFontSystemGroup">
+                <h4 class="styleguideFontSystemTitle">Label</h4>
+                <p class="styleguideFontSystemDesc">컴포넌트 구성 내 label, placeholder 등에 사용한다.</p>
+                <div class="styleguideFontSystemPreview">
+                    <p class="styleguideLabelDisplay styleguideLabel-xlarge-SB">Label-xlarge-SB</p>
+                    <p class="styleguideLabelDisplay styleguideLabel-large-SB">Label-large-SB</p>
+                    <p class="styleguideLabelDisplay styleguideLabel-medium-SB">Label-medium-SB</p>
+                    <p class="styleguideLabelDisplay styleguideLabel-small-SB">Label-small-SB</p>
+                </div>
+                <div class="styleguideTable styleguideTable--dark">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                            <col style="width: 20%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">Style</th>
+                                <th scope="col">Size(pc)</th>
+                                <th scope="col">Font weight</th>
+                                <th scope="col">Line height</th>
+                                <th scope="col">Letter spacing</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>xlarge-SB</td><td>16</td><td>600</td><td>150%</td><td>1px</td></tr>
+                            <tr><td>large-SB</td><td>14</td><td>600</td><td>150%</td><td>1px</td></tr>
+                            <tr><td>medium-SB</td><td>13</td><td>600</td><td>150%</td><td>0px</td></tr>
+                            <tr><td>small-SB</td><td>12</td><td>600</td><td>150%</td><td>0px</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

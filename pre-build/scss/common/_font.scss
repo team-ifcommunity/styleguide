@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+// https://v04.krds.go.kr/guide/style/style_03.html
+@font-face {
+  font-family: "PretendardGOV";
+  font-style: normal;
+  font-weight: 700;
+  font-display: block;
+  src: url(../lib/krds/resources/fonts/PretendardGOV-Bold.subset.woff2);
+}
+
+@font-face {
+  font-family: "PretendardGOV";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url(../lib/krds/resources/fonts/PretendardGOV-Medium.subset.woff2);
+}
+
+@font-face {
+  font-family: "PretendardGOV";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url(../lib/krds/resources/fonts/PretendardGOV-Regular.subset.woff2);
+}

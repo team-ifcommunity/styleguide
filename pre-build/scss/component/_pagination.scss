@@ -1,0 +1,39 @@
+
+
+.pagination {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px;
+
+  .btn {
+    font-size: 13px; font-weight: 400; color: var(--color-text-basic);
+    padding: 0 8px 0 4px;
+    min-width: unset;
+
+    &:hover:not(:disabled) {
+      background-color: var(--color-action-secondary-hover);
+    }
+  }
+
+  .num{
+    width: 32px; height: 32px;
+    border-radius: 6px;
+    font-size: 13px; font-weight: 400; color: var(--color-text-basic);
+    display: flex; align-items: center; justify-content: center;
+
+    &:hover {
+      background-color: var(--color-action-secondary-hover);
+    }
+    &.active {
+      background: linear-gradient(88.44deg, #004C99 2.66%, #008CBA 97.34%);
+      font-weight: 700;
+    }
+  }
+  .ellipsis {
+    width: 32px; height: 32px;
+    display: flex; align-items: center; justify-content: center;
+    svg {
+      color: #9A9DA1;
+    }
+  }
+
+}

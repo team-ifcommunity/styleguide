@@ -1,0 +1,254 @@
+<script>
+  (function () {
+    if (window.__styleguideThemeScriptInitialized) {
+      return;
+    }
+
+    window.__styleguideThemeScriptInitialized = true;
+
+    const CONFIGURED_THEME = "@@themeDefault";
+    const STORAGE_KEY = "krds-styleguide-theme";
+    const THEME_QUERY_KEY = "theme";
+    const THEME_STATE_ENDPOINT = "/__styleguide-theme-state";
+    const html = document.documentElement;
+
+    function isValidTheme(value) {
+      return value === "light" || value === "dark";
+    }
+
+    const DEFAULT_THEME = isValidTheme(CONFIGURED_THEME)
+      ? CONFIGURED_THEME
+      : "light";
+
+    function readThemeFromQuery() {
+      try {
+        const params = new URLSearchParams(window.location.search);
+        const queryTheme = params.get(THEME_QUERY_KEY);
+
+        return isValidTheme(queryTheme) ? queryTheme : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function readStoredTheme() {
+      try {
+        const storedTheme = window.localStorage.getItem(STORAGE_KEY);
+
+        return isValidTheme(storedTheme) ? storedTheme : null;
+      } catch (error) {
+        return null;
+      }
+    }
+
+    function writeStoredTheme(theme) {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, theme);
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function canUseStorage() {
+      try {
+        const probeKey = STORAGE_KEY + "__probe";
+        window.localStorage.setItem(probeKey, "1");
+        window.localStorage.removeItem(probeKey);
+        return true;
+      } catch (error) {
+        return false;
+      }
+    }
+
+    function updateThemeQuery(theme) {
+      try {
+        const url = new URL(window.location.href);
+        url.searchParams.set(THEME_QUERY_KEY, theme);
+        window.history.replaceState(null, "", url);
+      } catch (error) {
+        return;
+      }
+    }
+
+    function syncThemeState(theme) {
+      if (!shouldShowToggleButton()) {
+        return;
+      }
+
+      try {
+        window
+          .fetch(THEME_STATE_ENDPOINT, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ theme: theme }),
+          })
+          .catch(function () {
+            return;
+          });
+      } catch (error) {
+        return;
+      }
+    }
+
+    function syncToggleButton(theme, storageEnabled) {
+      const toggleButtons = document.querySelectorAll("[data-styleguide-theme-toggle]");
+      const nextTheme = theme === "dark" ? "light" : "dark";
+      const currentThemeText = theme === "dark" ? "Dark" : "Light";
+
+      if (!toggleButtons.length) return;
+
+      toggleButtons.forEach(function (toggleButton) {
+        const toggleLabel = toggleButton.querySelector(
+          "[data-styleguide-theme-label]"
+        );
+
+        toggleButton.setAttribute("aria-pressed", String(theme === "dark"));
+        toggleButton.setAttribute(
+          "aria-label",
+          currentThemeText + " theme active. Switch to " + nextTheme + " theme"
+        );
+
+        if (toggleLabel) {
+          toggleLabel.textContent = currentThemeText;
+        }
+
+        if (!storageEnabled) {
+          toggleButton.setAttribute(
+            "title",
+            "file 환경에서는 테마 저장이 브라우저별로 제한될 수 있습니다."
+          );
+        } else {
+          toggleButton.removeAttribute("title");
+        }
+      });
+    }
+
+    function createToggleButton() {
+      const toggleButton = document.createElement("button");
+      const toggleText = document.createElement("span");
+      const toggleValue = document.createElement("span");
+
+      toggleButton.type = "button";
+      toggleButton.className = "styleguideThemeToggle";
+      toggleButton.setAttribute("data-styleguide-theme-toggle", "");
+
+      toggleText.className = "styleguideThemeToggleText";
+      toggleText.textContent = "Theme";
+
+      toggleValue.className = "styleguideThemeToggleValue";
+      toggleValue.setAttribute("data-styleguide-theme-label", "");
+      toggleValue.textContent = "Light";
+
+      toggleButton.appendChild(toggleText);
+      toggleButton.appendChild(toggleValue);
+
+      return toggleButton;
+    }
+
+    function ensureToggleButtons() {
+      const actionContainers = document.querySelectorAll(".styleguideContentsHeaderActions");
+
+      actionContainers.forEach(function (actionContainer) {
+        if (actionContainer.querySelector("[data-styleguide-theme-toggle]")) {
+          return;
+        }
+
+        actionContainer.insertBefore(
+          createToggleButton(),
+          actionContainer.firstChild
+        );
+      });
+
+      return document.querySelectorAll("[data-styleguide-theme-toggle]");
+    }
+
+    function applyTheme(theme, options) {
+      const settings = options || {};
+      const nextTheme = isValidTheme(theme) ? theme : DEFAULT_THEME;
+      const shouldPersist = settings.persist !== false;
+      const shouldSyncQuery = settings.syncQuery !== false;
+
+      html.setAttribute("data-theme", nextTheme);
+      html.style.backgroundColor =
+        nextTheme === "dark" ? "#101013" : "#f4f6fa";
+
+      let storageEnabled = true;
+      if (shouldPersist) {
+        storageEnabled = writeStoredTheme(nextTheme);
+      }
+
+      if (shouldSyncQuery) {
+        updateThemeQuery(nextTheme);
+      }
+
+      syncToggleButton(nextTheme, storageEnabled);
+
+      return nextTheme;
+    }
+
+    function getCurrentTheme() {
+      const activeTheme = html.getAttribute("data-theme");
+      return isValidTheme(activeTheme) ? activeTheme : DEFAULT_THEME;
+    }
+
+    function shouldShowToggleButton() {
+      return window.location.protocol !== "file:";
+    }
+
+    const queryTheme = readThemeFromQuery();
+    const storedTheme = readStoredTheme();
+    const initialTheme = shouldShowToggleButton()
+      ? queryTheme || storedTheme || DEFAULT_THEME
+      : DEFAULT_THEME;
+
+    applyTheme(initialTheme, {
+      persist: false,
+      syncQuery: shouldShowToggleButton() && !queryTheme,
+    });
+
+    if (shouldShowToggleButton() && initialTheme !== DEFAULT_THEME) {
+      syncThemeState(initialTheme);
+    }
+
+    window.styleguideTheme = {
+      applyTheme: applyTheme,
+      getCurrentTheme: getCurrentTheme,
+      shouldShowToggleButton: shouldShowToggleButton,
+    };
+
+    function initThemeToggle() {
+      if (!shouldShowToggleButton()) {
+        return;
+      }
+
+      const toggleButtons = ensureToggleButtons();
+      if (!toggleButtons.length) return;
+
+      syncToggleButton(getCurrentTheme(), canUseStorage());
+
+      toggleButtons.forEach(function (toggleButton) {
+        if (toggleButton.dataset.styleguideThemeBound === "true") {
+          return;
+        }
+
+        toggleButton.dataset.styleguideThemeBound = "true";
+        toggleButton.addEventListener("click", function () {
+          const currentTheme = getCurrentTheme();
+          const nextTheme = currentTheme === "dark" ? "light" : "dark";
+
+          applyTheme(nextTheme);
+          syncThemeState(nextTheme);
+        });
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", initThemeToggle);
+    } else {
+      initThemeToggle();
+    }
+  })();
+</script>

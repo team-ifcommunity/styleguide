@@ -1,0 +1,80 @@
+<!--accNav-->
+<div id="accNav">
+    <a href="#container">본문 바로가기</a>
+</div>
+<!--//accNav-->
+
+<!-- header -->
+<header id="header" class="dashboard-header">
+    <div class="inner">
+        <div class="left">
+            <div class="site">
+                <svg class="svg-icon color-white" aria-hidden="true">
+                    <use href="#icon-map-marker"></use>
+                </svg>
+                <span class="site-text">사이트 이름이 들어갑니다.</span>
+            </div>
+        </div>
+        <div class="right">
+            @@if (headerRight === 'actions') {
+            <div class="actions">
+                <span class="action action--setting is-active" title="설정 정상">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-factory"></use></svg>
+                </span>
+                <span class="action action--warning" title="경고">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-warning"></use></svg>
+                </span>
+                <span class="action action--alarm" title="알림">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-ringbell"></use></svg>
+                </span>
+            </div>
+            <div class="datetime">
+                <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-time"></use></svg>
+                <span class="datetime-text">2026년 01월 06일 11:44:51</span>
+            </div>
+            }
+            @@if (headerRight === 'datetime') {
+            <div class="datetime simul">
+                <span class="datetime-text">2026년 01월 06일 11:44:51</span>
+                <button type="button" class="btn icon datetime-refresh black" aria-label="새로고침">
+                    <svg class="svg-icon icon--16 color-white" aria-hidden="true"><use href="#icon-outline-refresh"></use></svg>
+                </button>
+            </div>
+            }
+            @@if (headerRight === 'counters') {
+            <div class="header-counters">
+                <span class="header-counter-item active" title="설정">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-fill-control"></use></svg>
+                    <span class="header-counter-num">(0)</span>
+                </span>
+                <span class="header-counter-item" title="상태">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-fill-aging-test"></use></svg>
+                    <span class="header-counter-num">(0)</span>
+                </span>
+                <span class="header-counter-item" title="전력">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-fill-distribution"></use></svg>
+                    <span class="header-counter-num">(0)</span>
+                </span>
+                <span class="header-counter-item" title="유지보수">
+                    <svg class="svg-icon icon--24 color-white" aria-hidden="true">
+                        <use href="#icon-color-danger"></use>
+                        </svg>
+                    <span class="header-counter-num">(0)</span>
+                </span>
+            </div>
+            }
+
+            <div class="user">
+                <span class="user-avatar">
+                    <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-outline-user"></use></svg>
+                </span>
+                <span class="user-text"><span class="user-name">홍길동님</span>이 로그인하셨습니다</span>
+            </div>
+            <button type="button" class="btn medium tertiary">
+                <svg class="svg-icon icon--20" aria-hidden="true"><use href="#icon-outline-logout"></use></svg>
+                <span>로그아웃</span>
+            </button>
+        </div>
+    </div>
+</header>
+<!-- //header -->

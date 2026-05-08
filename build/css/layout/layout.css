@@ -1,0 +1,405 @@
+@charset "UTF-8";
+/* ----- card-gradient ----- */
+.card-gradient {
+  width: 100%;
+  padding: 16px;
+  /* ----- card-gradient.map (지도용 카드) ----- */
+}
+.card-gradient.map {
+  padding: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- progress-wrap ----- */
+.progress-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.progress__tit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.progress__track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+.progress__track.row .progress-bar {
+  width: calc(100% - 98px);
+}
+.progress__track.row .progress-value {
+  width: 80px;
+  text-align: right;
+}
+.progress .progress-name {
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-basic);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.progress .progress-value {
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-bolder);
+}
+.progress .progress-value em {
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-subtle);
+}
+.progress .progress-bar {
+  width: 100%;
+  height: 16px;
+  border-radius: 100px;
+}
+.progress .progress-bar::-webkit-progress-bar {
+  background-color: var(--color-element-cool-neutral-dark);
+  border-radius: 100px;
+}
+.progress .progress-bar::-webkit-progress-value {
+  background: linear-gradient(88.44deg, #004c99 2.66%, #008cba 97.34%);
+  border-radius: 100px;
+  transition: none;
+  /* JS가 애니메이션 처리 */
+}
+.progress .progress-bar::-moz-progress-bar {
+  background: linear-gradient(88.44deg, #004c99 2.66%, #008cba 97.34%);
+  border-radius: 100px;
+}
+.progress.simul-progress__bar .progress-bar::-webkit-progress-bar {
+  background-color: var(--color-surface-cool-neutral-light);
+}
+.progress.simul-progress__bar.green .progress-bar::-webkit-progress-value {
+  background: var(--color-icon-green);
+}
+.progress.simul-progress__bar.green .progress-bar::-moz-progress-bar {
+  background: var(--color-icon-green);
+}
+.progress.simul-progress__bar.secondary .progress-bar::-webkit-progress-value {
+  background: var(--color-icon-secondary);
+}
+.progress.simul-progress__bar.secondary .progress-bar::-moz-progress-bar {
+  background: var(--color-icon-secondary);
+}
+.progress.simul-progress__bar.disabled .progress-bar::-webkit-progress-value {
+  background: var(--color-element-disabled);
+}
+.progress.simul-progress__bar.disabled .progress-bar::-moz-progress-bar {
+  background: var(--color-element-disabled);
+}
+.progress.simul-progress__bar.gray .progress-bar::-webkit-progress-value {
+  background: var(--color-element-cool-neutral-lighter);
+}
+.progress.simul-progress__bar.gray .progress-bar::-moz-progress-bar {
+  background: var(--color-element-cool-neutral-lighter);
+}
+.progress.simul-progress__bar.yellow .progress-bar::-webkit-progress-value {
+  background: var(--color-icon-yellow);
+}
+.progress.simul-progress__bar.yellow .progress-bar::-moz-progress-bar {
+  background: var(--color-icon-yellow);
+}
+.progress.simul-progress__bar.red .progress-bar::-webkit-progress-value {
+  background: var(--color-icon-red);
+}
+.progress.simul-progress__bar.red .progress-bar::-moz-progress-bar {
+  background: var(--color-icon-red);
+}
+
+.rdi-badge .badge {
+  cursor: pointer;
+}
+
+.badge {
+  width: fit-content;
+  min-width: 60px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--color-element-black);
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-basic);
+  padding: 0 8px;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+.badge:hover {
+  background: var(--color-button-primary-fill);
+  color: var(--color-surface-white);
+  transition: all 0.5s;
+}
+.badge:hover svg {
+  color: var(--color-surface-white);
+  transition: all 0.5s;
+}
+.badge.is-active {
+  background: var(--color-button-primary-fill);
+  color: var(--color-surface-white);
+  transition: all 0.5s;
+}
+.badge.is-active svg {
+  color: var(--color-surface-white);
+  transition: all 0.5s;
+}
+.badge.is-hover {
+  background: var(--color-button-primary-fill);
+  color: var(--color-surface-white);
+  transition: all 0.5s;
+}
+.badge.is-hover svg {
+  color: var(--color-surface-white);
+  transition: all 0.5s;
+}
+.badge.gradient {
+  border: 0.1rem solid transparent;
+  color: var(--color-text-white);
+  font-weight: var(--font-weight-semibold);
+  position: relative;
+}
+.badge.gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.badge.gradient.active {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), var(--gradient-button-fill);
+  border-color: transparent;
+}
+.badge.gradient.inactive {
+  background: var(--color-cool-70);
+  border-color: var(--color-neutral-70);
+}
+.badge.badge-site {
+  background-color: var(--color-element-cool-neutral-lighter);
+}
+.badge.inactive {
+  background-color: var(--color-element-black);
+  min-width: unset;
+}
+.badge.green {
+  background-color: var(--color-element-green);
+  color: var(--color-text-bolder);
+}
+.badge.yellow {
+  background-color: var(--color-element-yellow);
+  color: var(--color-surface-black);
+}
+.badge.red {
+  background-color: var(--color-element-red);
+  color: var(--color-text-bolder);
+}
+.badge.gray {
+  background-color: var(--color-element-cool-neutral-lighter);
+  color: var(--color-text-bolder);
+}
+.badge.secondary {
+  background-color: var(--color-element-secondary);
+  color: var(--color-text-bolder);
+}
+.badge.disabled {
+  background-color: var(--color-element-disabled);
+  color: var(--color-text-bolder);
+}
+.badge.opacity {
+  min-width: unset;
+  height: 24px;
+  font-weight: var(--font-weight-regular);
+}
+.badge.opacity.secondary {
+  background-color: var(--color-secondary-80);
+  color: var(--color-secondary-20);
+}
+.badge.opacity.green {
+  background-color: var(--color-green-80);
+  color: var(--color-green-20);
+}
+.badge.opacity.orange {
+  background-color: var(--color-orange-80);
+  color: var(--color-orange-20);
+}
+
+.required {
+  position: relative;
+  width: fit-content;
+}
+.required::after {
+  content: "*";
+  position: absolute;
+  right: -10px;
+  top: 0;
+  color: var(--color-text-red);
+}
+
+.toggle-switch {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.toggle-switch__track {
+  display: flex;
+  align-items: center;
+  width: 32px;
+  height: 20px;
+  border-radius: 12px;
+  background-color: var(--color-element-cool-neutral-lighter);
+  transition: background-color 0.2s ease;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.toggle-switch__thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: var(--color-surface-white);
+  transition: transform 0.2s ease;
+  color: var(--color-element-gray);
+}
+.toggle-switch__thumb .svg-icon {
+  color: inherit;
+  width: 10px;
+  height: 10px;
+}
+.toggle-switch[aria-checked=true] .toggle-switch__track {
+  background-color: var(--color-element-primary);
+}
+.toggle-switch[aria-checked=true] .toggle-switch__thumb {
+  transform: translateX(12px);
+  background-color: var(--color-surface-white);
+  color: var(--color-element-primary);
+}
+
+.segment-control {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+.segment-control input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+.segment-control label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  font-size: var(--font-size-body-medium);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-white);
+  background-color: var(--color-cool-neutral-70);
+  border: 1px solid var(--color-neutral-70);
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  margin-left: -1px;
+  border-radius: 4px;
+}
+.segment-control input:checked + label {
+  background: var(--gradient-button-fill);
+  border: unset;
+  font-weight: var(--font-weight-bold);
+  z-index: 1;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 300px;
+}
+
+svg.svg-icon {
+  background-color: transparent;
+}
+
+.form-group label {
+  align-items: center;
+  column-gap: 4px;
+}
+.form-group label::before {
+  content: "";
+  position: relative;
+  top: 1px;
+  width: 16px;
+  height: 16px;
+}
+.form-group input:disabled {
+  cursor: not-allowed;
+}
+.form-group input:disabled + label {
+  cursor: not-allowed;
+  user-select: none;
+  filter: grayscale(1);
+}
+.form-group select:disabled,
+.form-group textarea:disabled {
+  cursor: not-allowed;
+  user-select: none;
+}
+
+[type=radio] + label::before {
+  border: 1px solid var(--color-input-border);
+  border-radius: 50%;
+  background-color: var(--color-input-surface);
+}
+[type=radio]:checked + label::before {
+  border: 4px solid var(--color-element-secondary) !important;
+  background-color: var(--color-element-white);
+}
+[type=radio]:disabled + label::before {
+  background-color: var(--color-input-surface-disabled);
+}
+[type=radio]:disabled:checked + label::before {
+  background-color: var(--color-input-surface-disabled);
+}
+
+[type=checkbox]:disabled + label::before,
+[type=radio]:disabled + label::before {
+  border: 1px solid light-dark(rgb(84, 84, 84), rgb(170, 170, 170));
+  background-color: var(--color-input-surface-disabled);
+}
+
+[type=checkbox]:checked + label::before {
+  background: url("../../assets/images/ico/inp-chk-active.svg") no-repeat center;
+}
+[type=checkbox]:disabled:checked + label::before {
+  background: url("../../assets/images/ico/inp-chk-active-disabled.svg") no-repeat center;
+}
+[type=checkbox] + label::before {
+  border: 1px solid var(--color-input-border);
+  border-radius: 4px;
+  background-color: var(--color-input-surface);
+}

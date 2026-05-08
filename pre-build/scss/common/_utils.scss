@@ -1,0 +1,220 @@
+@charset "utf-8";
+
+/* ========================================
+   Color
+   ======================================== */
+$color-utils: (
+  "primary": var(--color-element-primary),
+  "secondary": var(--color-element-secondary),
+  "skyblue": var(--color-element-skyblue),
+  "green": var(--color-element-green),
+  "yellow": var(--color-element-yellow),
+  "orange": var(--color-element-orange),
+  "red": var(--color-element-red),
+  "white": var(--color-element-white),
+  "black": var(--color-element-black),
+  "disabled": var(--color-element-disabled),
+  "netural": var(--color-element-neutral-lighter),
+);
+
+@each $name, $value in $color-utils {
+  .color-#{$name} {
+    color: $value;
+  } 
+}
+
+/* ========================================
+   Background
+   ======================================== */
+$bg-utils: (
+  "primary": var(--color-element-primary),
+  "secondary": var(--color-element-secondary),
+  "white": var(--color-surface-white),
+  "black": var(--color-surface-black),
+  "basic": var(--color-background-basic),
+  "cool": var(--color-surface-cool-neutral),
+);
+
+@each $name, $value in $bg-utils {
+  .bg-#{$name} {
+    background-color: $value;
+  }
+}
+
+/* ========================================
+   Font Size
+   ======================================== */
+$font-size-utils: (
+  display-lg: var(--font-size-display-large),
+  display-md: var(--font-size-display-medium),
+  display-sm: var(--font-size-display-small),
+  heading-xl: var(--font-size-heading-xlarge),
+  heading-lg: var(--font-size-heading-large),
+  heading-md: var(--font-size-heading-medium),
+  heading-sm: var(--font-size-heading-small),
+  heading-xs: var(--font-size-heading-xsmall),
+  body-xl: var(--font-size-body-xlarge),
+  body-lg: var(--font-size-body-large),
+  body-md: var(--font-size-body-medium),
+  body-sm: var(--font-size-body-small),
+  label-xl: var(--font-size-label-xlarge),
+  label-lg: var(--font-size-label-large),
+  label-md: var(--font-size-label-medium),
+  label-sm: var(--font-size-label-small),
+);
+
+@each $name, $value in $font-size-utils {
+  .fs-#{$name} {
+    font-size: $value;
+  }
+}
+
+
+
+/* ========================================
+   flex
+   ======================================== */
+
+$flex-utils: (
+  'ac': (align-items: center),
+  'ab': (align-items: end),
+  'jc': (justify-content: center),
+  'sb': (justify-content: space-between),
+  'je': (justify-content: flex-end),
+  'top': (align-items: flex-start),
+  'bottom': (align-items: flex-end),
+  'left': (justify-content: flex-start),
+  'right': (justify-content: flex-end),
+  
+  'cg4': (column-gap: 4px),
+  'cg5': (column-gap: 5px),
+  'cg8': (column-gap: 8px),
+  'cg12': (column-gap: 12px),
+  'cg16': (column-gap: 16px),
+  'cg10': (column-gap: 10px),
+  'cg20': (column-gap: 20px),
+  'rg4': (row-gap: 4px),
+  'rg5': (row-gap: 5px),
+  'rg10': (row-gap: 10px),
+  'rg8': (row-gap: 8px),
+  'rg12': (row-gap: 12px),
+  'rg16': (row-gap: 16px),
+  'rg20': (row-gap: 20px),
+  
+  'wrap': (flex-wrap: wrap),
+  'col': (flex-direction: column),
+);
+
+.flex {
+  display: flex !important;
+  
+  @each $name, $props in $flex-utils {
+    &.#{$name} {
+      @each $property, $value in $props {
+        #{$property}: #{$value} !important;
+      }
+    }
+  }
+}
+
+// flex 없이 단독 사용
+@each $name, $props in $flex-utils {
+  .#{$name} {
+    @each $property, $value in $props {
+      #{$property}: #{$value} !important;
+    }
+  }
+}
+
+
+/* ========================================
+   text align
+   ======================================== */
+$text-utils: (
+  'center': (text-align: center),
+  'left': (text-align: left),
+  'right': (text-align: right),
+);
+
+@each $name, $props in $text-utils {
+  .txt-#{$name} {
+    @each $property, $value in $props {
+      #{$property}: #{$value} !important;
+    }
+  }
+}
+
+
+/* ========================================
+   margin / padding
+   ======================================== */
+
+@for $i from 1 through 1000 {
+  // Width 클래스
+  .w#{$i} {
+    width: #{$i}px !important;
+  }
+
+  // Height 클래스
+  .h#{$i} {
+    height: #{$i}px !important;
+  }
+
+  .gap#{$i} {
+    gap: #{$i}px !important;
+  }
+
+  .min-w#{$i} {
+    min-width: #{$i}px !important;
+  }
+  .min-h#{$i} {
+    min-height: #{$i}px !important;
+  }
+
+  .max-w#{$i} {
+    max-width: #{$i}px !important;
+  }
+  .max-h#{$i} {
+    max-height: #{$i}px !important;
+  }
+
+  // Margin 각 방향 클래스
+  .mt#{$i} {
+    margin-top: #{$i}px !important;
+  }
+  .mr#{$i} {
+    margin-right: #{$i}px !important;
+  }
+  .mb#{$i} {
+    margin-bottom: #{$i}px !important;
+  }
+  .ml#{$i} {
+    margin-left: #{$i}px !important;
+  }
+
+  // Padding 각 방향 클래스
+  .pt#{$i} {
+    padding-top: #{$i}px !important;
+  }
+  .pr#{$i} {
+    padding-right: #{$i}px !important;
+  }
+  .pb#{$i} {
+    padding-bottom: #{$i}px !important;
+  }
+  .pl#{$i} {
+    padding-left: #{$i}px !important;
+  }
+}
+
+.full{
+  width: 100%;
+}
+
+.flex-1{
+  flex: 1;
+}
+
+.txt-bold{
+  font-weight: 700;
+}
