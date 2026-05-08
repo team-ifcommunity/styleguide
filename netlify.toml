@@ -1,0 +1,7 @@
+[build]
+  publish = "build"
+
+[[redirects]]
+  from = "/"
+  to = "/html/00_coding_list.html"
+  status = 200
